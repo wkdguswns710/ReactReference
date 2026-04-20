@@ -27,7 +27,6 @@ export default function PlaceholderPage() {
       <p>
         아래 구조를 참고하여 새 페이지를 만들어보세요.
       </p>
-
       <Box
         sx={{
           p: 3,
@@ -41,27 +40,26 @@ export default function PlaceholderPage() {
           color: theme.palette.text.secondary,
         }}
       >
-{`// src/pages/MyNewPage.tsx
-import DocPage from '../components/DocPage/DocPage';
-import CodeBlock from '../components/DocPage/CodeBlock';
-import Callout from '../components/DocPage/Callout';
+        {`// src/pages/MyNewPage.tsx
+        import DocPage from '../components/DocPage/DocPage';
+        import CodeBlock from '../components/DocPage/CodeBlock';
+        import Callout from '../components/DocPage/Callout';
 
-export default function MyNewPage() {
-  return (
-    <DocPage title="페이지 제목" badge="학습하기">
-      <h2>섹션 제목</h2>
-      <p>내용을 여기에 작성하세요.</p>
+        export default function MyNewPage() {
+          return (
+            <DocPage title="페이지 제목" badge="학습하기">
+              <h2>섹션 제목</h2>
+              <p>내용을 여기에 작성하세요.</p>
 
-      <CodeBlock code={\`const hello = 'world';\`} />
+              <CodeBlock code={\`const hello = 'world';\`} />
 
-      <Callout type="note">
-        중요한 내용을 여기에 작성하세요.
-      </Callout>
-    </DocPage>
-  );
-}`}
+              <Callout type="note">
+                중요한 내용을 여기에 작성하세요.
+              </Callout>
+            </DocPage>
+          );
+        }`}
       </Box>
-
       <Typography variant="body1" sx={{ mt: 3 }}>
         그런 다음 <code>src/App.tsx</code>에서 라우트를 추가하세요.
       </Typography>

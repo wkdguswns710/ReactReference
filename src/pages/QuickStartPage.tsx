@@ -72,9 +72,7 @@ export default function QuickStartPage() {
       <p>
         React 컴포넌트는 마크업을 반환하는 JavaScript 함수입니다.
       </p>
-
       <CodeBlock code={helloWorldCode} filename="App.jsx" />
-
       <Callout type="note">
         <p>React 컴포넌트 이름은 항상 대문자로 시작해야 하며, HTML 태그는 소문자여야 합니다.</p>
       </Callout>
@@ -85,9 +83,7 @@ export default function QuickStartPage() {
         예를 들어 버튼을 클릭하면 카운터가 증가하도록 할 수 있습니다.
         이를 위해 컴포넌트에 <strong>state</strong>를 추가해야 합니다.
       </p>
-
       <CodeBlock code={stateCode} filename="App.jsx" />
-
       <Callout type="tip">
         <p>
           <code>useState</code>는 두 가지를 제공합니다: 현재 state (<code>count</code>)와
@@ -100,9 +96,7 @@ export default function QuickStartPage() {
         각 컴포넌트는 독립적인 state를 가집니다. 여러 컴포넌트가 같은 state를 공유하려면
         해당 state를 <strong>부모 컴포넌트로 끌어올려야</strong> 합니다.
       </p>
-
       <CodeBlock code={propsCode} filename="App.jsx" />
-
       <Callout type="warning">
         <p>
           이 페이지는 샘플 콘텐츠입니다. <code>src/pages/QuickStartPage.tsx</code> 파일을 수정하여
