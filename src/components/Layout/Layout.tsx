@@ -7,19 +7,20 @@ const HEADER_HEIGHT = 60;
 const SIDEBAR_WIDTH = 272;
 
 interface LayoutProps {
-  children: React.ReactNode;
+  children: React.ReactNode; // 레이아웃 내 렌더링 될 페이지
   onToggleTheme: () => void;
 }
 
 export default function Layout({ children, onToggleTheme }: LayoutProps) {
   const theme = useTheme();
   const location = useLocation();
-  const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
+  const isDesktop = useMediaQuery(theme.breakpoints.up('md')); // 화면 md(960px) 이상이면 데크스탑
 
   const isDocPage =
-    location.pathname.startsWith('/learn') || location.pathname.startsWith('/reference');
+    location.pathname.startsWith('/learn') || location.pathname.startsWith('/reference'); //learn 또는 /reference 경로일 때
 
   return (
+    // sx: MUI의 테마 기반 커스텀 스타일
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <Header onToggleTheme={onToggleTheme} />
 
