@@ -1,13 +1,16 @@
 import { useState } from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { ThemeProvider, CssBaseline } from '@mui/material';
-import { lightTheme, darkTheme } from './theme/theme';
-import Layout from './components/Layout/Layout';
-import HomePage from './pages/HomePage';
-import LearnIndexPage from './pages/LearnIndexPage';
-import QuickStartPage from './pages/QuickStartPage';
-import PlaceholderPage from './pages/PlaceholderPage';
-import { navSections } from './data/navigation';
+import { lightTheme, darkTheme } from '@/theme/theme';
+import { navSections } from '@/data/navigation';
+import Layout from '@/components/Layout/Layout';
+import HomePage from '@/pages/HomePage';
+import LearnIndexPage from '@/pages/learn/LearnIndexPage';
+import QuickStartPage from '@/pages/QuickStartPage';
+import PlaceholderPage from '@/pages/PlaceholderPage';
+import InstallPage from '@/pages/learn/InstallPage';
+import SettingPage from '@/pages/learn/SettingPage';
+import CompilerPage from '@/pages/learn/CompilerPage';
 
 // 컴포넌트 밖에 있는 이유
 // navSections는 정적 데이터이므로 렌더링마다 재계산할 필요가 없음
@@ -29,6 +32,9 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/learn" element={<LearnIndexPage />} />
             <Route path="/learn/quick-start" element={<QuickStartPage />} />
+            <Route path="/learn/install" element={<InstallPage />} />
+            <Route path="/learn/setting" element={<SettingPage />} />
+            <Route path="/learn/compiler" element={<CompilerPage />} />
 
             {/* Placeholder routes for all other doc pages */}
             {placeholderPaths.map((path) => (

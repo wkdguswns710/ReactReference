@@ -5,7 +5,7 @@ import {
   useTheme,
 } from '@mui/material';
 import { Link } from 'react-router-dom';
-import { navSections } from '../data/navigation';
+import { navSections } from '@/data/navigation';
 
 export default function LearnIndexPage() {
   const theme = useTheme();

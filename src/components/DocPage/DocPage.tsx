@@ -11,7 +11,7 @@ import {
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Link, useLocation } from 'react-router-dom';
-import { navSections } from '../../data/navigation';
+import { navSections, type NavItem } from '@/data/navigation';
 
 interface DocPageProps {
   title: string;
@@ -31,15 +31,30 @@ function usePrevNext() {
   return { prev, next };
 }
 
-function useCurrentSection() {
+function findTrail(items: NavItem[], pathname: string): NavItem[] | null {
+  for (const item of items) {
+    if (item.path === pathname) return [item];
+    if (item.children) {
+      const sub = findTrail(item.children, pathname);
+      if (sub) return [item, ...sub];
+    }
+  }
+  return null;
+}
+
+function useBreadcrumbs() {
   const location = useLocation();
-  return navSections.find((s) => s.items.some((item) => item.path === location.pathname));
+  for (const section of navSections) {
+    const trail = findTrail(section.items, location.pathname);
+    if (trail) return { section, trail };
+  }
+  return null;
 }
 
 export default function DocPage({ title, description, badge, children }: DocPageProps) {
   const theme = useTheme();
   const { prev, next } = usePrevNext();
-  const currentSection = useCurrentSection();
+  const breadcrumbs = useBreadcrumbs();
 
   return (
     <Box
@@ -51,7 +66,7 @@ export default function DocPage({ title, description, badge, children }: DocPage
       }}
     >
       {/* Breadcrumb */}
-      {currentSection && (
+      {breadcrumbs && (
         <Breadcrumbs sx={{ mb: 3 }} aria-label="breadcrumb">
           <MuiLink
             component={Link}
@@ -62,8 +77,26 @@ export default function DocPage({ title, description, badge, children }: DocPage
             학습하기
           </MuiLink>
           <Typography sx={{ fontSize: '0.85rem', color: theme.palette.text.secondary }}>
-            {currentSection.title}
+            {breadcrumbs.section.title}
           </Typography>
+          {breadcrumbs.trail.map((item, i) => {
+            const isLast = i === breadcrumbs.trail.length - 1;
+            return isLast ? (
+              <Typography key={item.path} sx={{ fontSize: '0.85rem', color: theme.palette.text.primary }}>
+                {item.title}
+              </Typography>
+            ) : (
+              <MuiLink
+                key={item.path}
+                component={Link}
+                to={item.path}
+                underline="hover"
+                sx={{ fontSize: '0.85rem', color: theme.palette.text.secondary }}
+              >
+                {item.title}
+              </MuiLink>
+            );
+          })}
         </Breadcrumbs>
       )}
 

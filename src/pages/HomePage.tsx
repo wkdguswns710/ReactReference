@@ -14,7 +14,7 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 import CodeIcon from '@mui/icons-material/Code';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import { Link } from 'react-router-dom';
-import { navSections } from '../data/navigation';
+import { navSections } from '@/data/navigation';
 
 const featureCards = [
   {

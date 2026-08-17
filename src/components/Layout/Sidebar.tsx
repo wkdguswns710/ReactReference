@@ -11,7 +11,7 @@ import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { navSections } from '../../data/navigation';
+import { navSections } from '@/data/navigation';
 
 interface SidebarProps {
   onNavigate?: () => void;

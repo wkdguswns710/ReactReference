@@ -1,8 +1,8 @@
 import { Box, Typography, useTheme } from '@mui/material';
 import { useLocation } from 'react-router-dom';
-import DocPage from '../components/DocPage/DocPage';
-import Callout from '../components/DocPage/Callout';
-import { navSections } from '../data/navigation';
+import DocPage from '@/components/DocPage/DocPage';
+import Callout from '@/components/DocPage/Callout';
+import { navSections } from '@/data/navigation';
 
 export default function PlaceholderPage() {
   const theme = useTheme();
@@ -41,9 +41,9 @@ export default function PlaceholderPage() {
         }}
       >
         {`// src/pages/MyNewPage.tsx
-        import DocPage from '../components/DocPage/DocPage';
-        import CodeBlock from '../components/DocPage/CodeBlock';
-        import Callout from '../components/DocPage/Callout';
+        import DocPage from '@/components/DocPage/DocPage';
+        import CodeBlock from '@/components/DocPage/CodeBlock';
+        import Callout from '@/components/DocPage/Callout';
 
         export default function MyNewPage() {
           return (

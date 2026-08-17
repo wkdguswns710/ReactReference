@@ -16,7 +16,7 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 import SearchIcon from '@mui/icons-material/Search';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { headerNavItems } from '../../data/navigation';
+import { headerNavItems } from '@/data/navigation';
 import Sidebar from './Sidebar';
 
 interface HeaderProps {

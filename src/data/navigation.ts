@@ -1,6 +1,7 @@
 export interface NavItem {
   title: string;
   path: string;
+  children?: NavItem[];
 }
 
 export interface NavSection {
@@ -13,8 +14,9 @@ export const navSections: NavSection[] = [
     title: '시작하기',
     items: [
       { title: '빠른 시작', path: '/learn/quick-start' },
-      { title: '튜토리얼: 틱택토', path: '/learn/tutorial-tic-tac-toe' },
-      { title: 'React로 생각하기', path: '/learn/thinking-in-react' },
+      { title: '설치하기', path: '/learn/install' },
+      { title: '설정하기', path: '/learn/setting' },
+      { title: '컴파일러', path: '/learn/compiler' },
     ],
   },
   {
@@ -28,6 +30,7 @@ export const navSections: NavSection[] = [
       { title: '조건부 렌더링', path: '/learn/conditional-rendering' },
       { title: '리스트 렌더링', path: '/learn/rendering-lists' },
       { title: '컴포넌트 순수성 유지하기', path: '/learn/keeping-components-pure' },
+      { title: '트리로서의 UI', path: '/learn/tree-of-ui' },
     ],
   },
   {
