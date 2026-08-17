@@ -13,7 +13,6 @@ export const navSections: NavSection[] = [
   {
     title: '시작하기',
     items: [
-      { title: '빠른 시작', path: '/learn/quick-start' },
       { title: '설치하기', path: '/learn/install' },
       { title: '설정하기', path: '/learn/setting' },
       { title: '컴파일러', path: '/learn/compiler' },

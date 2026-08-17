@@ -101,7 +101,7 @@ export default function HomePage() {
             <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
               <Button
                 component={Link}
-                to="/learn/quick-start"
+                to="/learn/install"
                 variant="contained"
                 size="large"
                 endIcon={<ArrowForwardIcon />}

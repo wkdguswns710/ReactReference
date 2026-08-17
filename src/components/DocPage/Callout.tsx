@@ -76,7 +76,7 @@ export default function Callout({ type = 'note', title, children }: CalloutProps
                 lineHeight: 1.7,
                 color: theme.palette.text.primary,
                 '& p': { m: 0 },
-                '& code': {
+                '& :not(pre) > code': {
                   fontFamily: 'monospace',
                   fontSize: '0.85em',
                   backgroundColor: `${colors.border}80`,

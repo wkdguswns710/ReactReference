@@ -87,14 +87,7 @@ export default function CodeBlock({ code, language = 'jsx', filename }: CodeBloc
           fontFamily: '"Fira Code", "Source Code Pro", "Consolas", monospace',
           fontSize: '0.875rem',
           lineHeight: 1.7,
-          color: '#E2E8F0',
-          '& .keyword': { color: '#C678DD' },
-          '& .string': { color: '#98C379' },
-          '& .comment': { color: '#5C6370', fontStyle: 'italic' },
-          '& .number': { color: '#D19A66' },
-          '& .function': { color: '#61AFEF' },
-          '& .tag': { color: '#E06C75' },
-          '& .attr': { color: '#D19A66' },
+          color: '#F1F5F9',
         }}
       >
         <code>{code}</code>

@@ -6,7 +6,6 @@ import { navSections } from '@/data/navigation';
 import Layout from '@/components/Layout/Layout';
 import HomePage from '@/pages/HomePage';
 import LearnIndexPage from '@/pages/learn/LearnIndexPage';
-import QuickStartPage from '@/pages/QuickStartPage';
 import PlaceholderPage from '@/pages/PlaceholderPage';
 import InstallPage from '@/pages/learn/InstallPage';
 import SettingPage from '@/pages/learn/SettingPage';
@@ -16,8 +15,7 @@ import CompilerPage from '@/pages/learn/CompilerPage';
 // navSections는 정적 데이터이므로 렌더링마다 재계산할 필요가 없음
 const placeholderPaths = navSections
   .flatMap((s) => s.items)
-  .map((item) => item.path)
-  .filter((path) => path !== '/learn/quick-start');
+  .map((item) => item.path);
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -31,7 +29,6 @@ export default function App() {
             // 각 경로별 페이지 컴포넌트
             <Route path="/" element={<HomePage />} />
             <Route path="/learn" element={<LearnIndexPage />} />
-            <Route path="/learn/quick-start" element={<QuickStartPage />} />
             <Route path="/learn/install" element={<InstallPage />} />
             <Route path="/learn/setting" element={<SettingPage />} />
             <Route path="/learn/compiler" element={<CompilerPage />} />

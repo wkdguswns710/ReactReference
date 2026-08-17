@@ -1,150 +1,120 @@
-import { Box, useTheme } from '@mui/material';
+import { Link } from 'react-router-dom';
 import DocPage from '@/components/DocPage/DocPage';
 import CodeBlock from '@/components/DocPage/CodeBlock';
 import Callout from '@/components/DocPage/Callout';
 
-const helloWorldCode = `function MyButton() {
-  return (
-    <button>I'm a button</button>
-  );
-}
-
-export default function MyApp() {
-  return (
-    <div>
-      <h1>Welcome to my app</h1>
-      <MyButton />
-    </div>
-  );
+const eslintConfigCode = `{
+  "extends": ["react-app", "react-app/jest"]
 }`;
 
-const stateCode = `import { useState } from 'react';
-
-function MyButton() {
-  const [count, setCount] = useState(0);
-
-  function handleClick() {
-    setCount(count + 1);
-  }
-
-  return (
-    <button onClick={handleClick}>
-      Clicked {count} times
-    </button>
-  );
+const prettierConfigCode = `{
+  "singleQuote": true,
+  "semi": true,
+  "trailingComma": "all"
 }`;
 
-const propsCode = `function MyButton({ count, onClick }) {
-  return (
-    <button onClick={onClick}>
-      Clicked {count} times
-    </button>
-  );
-}
-
-export default function MyApp() {
-  const [count, setCount] = useState(0);
-
-  function handleClick() {
-    setCount(count + 1);
-  }
-
-  return (
-    <div>
-      <h1>Counters that update together</h1>
-      <MyButton count={count} onClick={handleClick} />
-      <MyButton count={count} onClick={handleClick} />
-    </div>
-  );
-}`;
-
-export default function QuickStartPage() {
-  const theme = useTheme();
-
+export default function SettingPage() {
   return (
     <DocPage
-      title="빠른 시작"
-      description="React 공식 문서의 빠른 시작 내용을 정리한 페이지입니다. 이 페이지를 수정하여 학습한 내용을 채워보세요."
-      badge="학습하기"
+      title="설정하기"
+      description="에디터를 올바르게 구성하면 코드를 더 읽기 쉽고 빠르게 작성할 수 있으며, 코드를 작성하는 순간 버그를 잡아낼 수도 있습니다."
+      badge="설정하기"
     >
-      <h2>컴포넌트 생성 및 중첩하기</h2>
+      <h2>에디터 설정하기</h2>
       <p>
-        React 앱은 <strong>컴포넌트</strong>로 구성됩니다. 컴포넌트는 고유한 로직과 모양을 가진 UI의 일부입니다.
-        컴포넌트는 버튼만큼 작을 수도 있고 전체 페이지만큼 클 수도 있습니다.
+        에디터를 올바르게 구성하면 코드를 더 읽기 쉽고 빠르게 작성할 수 있습니다. 심지어 코드를 작성하는
+        순간 버그를 잡아낼 수도 있습니다! 처음 에디터를 설정하는 것이라면, 좋은 에디터를 선택하는 것만으로도
+        생산성에 큰 도움이 됩니다.
       </p>
-      <p>
-        React 컴포넌트는 마크업을 반환하는 JavaScript 함수입니다.
-      </p>
-      <CodeBlock code={helloWorldCode} filename="App.jsx" />
-      <Callout type="note">
-        <p>React 컴포넌트 이름은 항상 대문자로 시작해야 하며, HTML 태그는 소문자여야 합니다.</p>
-      </Callout>
 
-      <h2>State 추가하기</h2>
+      <h3>에디터 선택하기</h3>
       <p>
-        컴포넌트는 종종 상호작용의 결과로 화면에 표시되는 내용을 변경해야 합니다.
-        예를 들어 버튼을 클릭하면 카운터가 증가하도록 할 수 있습니다.
-        이를 위해 컴포넌트에 <strong>state</strong>를 추가해야 합니다.
+        <a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer">
+          VS Code
+        </a>
+        는 오늘날 가장 널리 사용되는 에디터 중 하나입니다. VS Code는 방대한 확장 마켓플레이스를 보유하고
+        있으며, GitHub와 같은 인기 있는 서비스와도 잘 통합됩니다. 아래에 나열된 대부분의 기능은 확장
+        프로그램으로 VS Code에 추가할 수 있어, 매우 구성 가능합니다!
       </p>
-      <CodeBlock code={stateCode} filename="App.jsx" />
-      <Callout type="tip">
-        <p>
-          <code>useState</code>는 두 가지를 제공합니다: 현재 state (<code>count</code>)와
-          이를 업데이트하는 함수 (<code>setCount</code>). 관례상 <code>[something, setSomething]</code>으로 명명합니다.
-        </p>
-      </Callout>
+      <p>React 커뮤니티에서 사용하는 다른 인기 있는 텍스트 에디터는 다음과 같습니다.</p>
+      <ul>
+        <li>
+          <a href="https://www.jetbrains.com/webstorm/" target="_blank" rel="noreferrer">
+            WebStorm
+          </a>
+          은 자바스크립트를 위해 특별히 설계된 통합 개발 환경입니다.
+        </li>
+        <li>
+          <a href="https://www.sublimetext.com/" target="_blank" rel="noreferrer">
+            Sublime Text
+          </a>
+          는 JSX와 TypeScript를 지원하며, 문법 강조와 자동 완성 기능이 내장되어 있습니다.
+        </li>
+        <li>
+          <a href="https://www.vim.org/" target="_blank" rel="noreferrer">
+            Vim
+          </a>
+          은 모든 종류의 텍스트를 매우 효율적으로 생성하고 변경할 수 있도록 구성 가능한 텍스트 에디터입니다.
+        </li>
+      </ul>
 
-      <h2>State 공유하기</h2>
+      <h3>추천 텍스트 에디터 기능</h3>
       <p>
-        각 컴포넌트는 독립적인 state를 가집니다. 여러 컴포넌트가 같은 state를 공유하려면
-        해당 state를 <strong>부모 컴포넌트로 끌어올려야</strong> 합니다.
+        일부 에디터에는 이러한 기능이 기본으로 포함되어 있지만, 다른 에디터는 확장 프로그램을 추가해야 할 수
+        있습니다. 사용 중인 에디터가 어떤 기능을 지원하는지 확인해보세요!
       </p>
-      <CodeBlock code={propsCode} filename="App.jsx" />
+
+      <h4>린팅(Linting)</h4>
+      <p>
+        코드 린터는 코드를 작성하는 동안 실시간으로 문제를 찾아내어 문제를 더 빠르게 해결할 수 있도록
+        도와줍니다.{' '}
+        <a href="https://eslint.org/" target="_blank" rel="noreferrer">
+          ESLint
+        </a>
+        는 React를 위한 인기 있는 오픈소스 린터입니다.
+      </p>
+      <ul>
+        <li>Hook 규칙을 강제하는 <code>eslint-plugin-react-hooks</code>를 함께 사용하는 것이 좋습니다.</li>
+        <li>
+          <code>Create React App</code>은 몇 가지 규칙과 함께 ESLint를 사전에 구성한{' '}
+          <code>eslint-config-react-app</code>을 포함합니다.
+        </li>
+      </ul>
+      <CodeBlock code={eslintConfigCode} language="json" filename=".eslintrc.json" />
       <Callout type="warning">
         <p>
-          이 페이지는 샘플 콘텐츠입니다. <code>src/pages/QuickStartPage.tsx</code> 파일을 수정하여
-          실제 학습 내용을 채워보세요.
+          <strong>구성을 저장하지 않고 규칙을 사용할 경우</strong> 필요한 플러그인이 모두 설치되어 있는지
+          확인하세요. 예를 들어 Hook 관련 규칙을 사용하려면 <code>eslint-plugin-react-hooks</code> 패키지를
+          설치해야 합니다.
         </p>
       </Callout>
 
-      <Box
-        sx={{
-          p: 3,
-          borderRadius: '10px',
-          border: `1px solid ${theme.palette.divider}`,
-          backgroundColor: theme.palette.background.paper,
-          fontFamily: 'monospace',
-          fontSize: '0.875rem',
-          whiteSpace: 'pre',
-          overflowX: 'auto',
-          color: theme.palette.text.secondary,
-        }}
-      >
-        {`// src/pages/MyNewPage.tsx
-        import DocPage from '@/components/DocPage/DocPage';
-        import CodeBlock from '@/components/DocPage/CodeBlock';
-        import Callout from '@/components/DocPage/Callout';
+      <h4>포맷팅(Formatting)</h4>
+      <p>
+        새로운 협업자와 함께 작업할 때 가장 하고 싶지 않은 일은 코드 스타일(탭 2칸 vs 4칸!)에 대해
+        논쟁하는 것입니다.{' '}
+        <a href="https://prettier.io/" target="_blank" rel="noreferrer">
+          Prettier
+        </a>
+        는 미리 정의된 조정 가능한 규칙 집합에 따라 코드를 다시 포맷팅하여 코드를 일관되게 유지하는 데
+        가장 많이 사용되는 코드 포맷터입니다. 저장할 때 Prettier를 실행하도록 설정하면 빠르고 쉽게 적용할 수
+        있습니다.
+      </p>
+      <CodeBlock code={prettierConfigCode} language="json" filename=".prettierrc" />
 
-        export default function MyNewPage() {
-          return (
-            <DocPage title="페이지 제목" badge="학습하기">
-              <h2>섹션 제목</h2>
-              <p>내용을 여기에 작성하세요.</p>
-
-              <CodeBlock code={\`const hello = 'world';\`} />
-
-              <Callout type="note">
-                중요한 내용을 여기에 작성하세요.
-              </Callout>
-            </DocPage>
-          );
-        }`}
-      </Box>
+      <Callout type="tip">
+        <p>
+          <strong>VS Code를 사용하고 있다면?</strong> "Editor &gt; Format On Save"를 확인하고,{' '}
+          <code>.vscode/settings.json</code>에{' '}
+          <code>{'"editor.defaultFormatter": "esbenp.prettier-vscode"'}</code>를 추가하면 파일을 저장할
+          때마다 자동으로 포맷팅됩니다.
+        </p>
+      </Callout>
 
       <h2>다음 단계</h2>
       <p>
-        이제 React 코드를 작성하는 방법에 대한 기본적인 내용을 살펴봤습니다.
-        다음 페이지로 넘어가서 더 자세히 살펴보세요.
+        에디터 설정을 마쳤다면, 다음으로 React 앱을 더 빠르게 만들어주는{' '}
+        <Link to="/learn/compiler">React 컴파일러</Link>에 대해 알아보세요.
       </p>
     </DocPage>
   );

@@ -161,6 +161,13 @@ export default function DocPage({ title, description, badge, children }: DocPage
             color: theme.palette.text.primary,
             scrollMarginTop: '80px',
           },
+          '& h4': {
+            ...theme.typography.h4,
+            mt: 3,
+            mb: 1,
+            color: theme.palette.text.primary,
+            scrollMarginTop: '80px',
+          },
           '& p': {
             ...theme.typography.body1,
             mb: 2,
@@ -179,7 +186,7 @@ export default function DocPage({ title, description, badge, children }: DocPage
             fontWeight: 500,
             '&:hover': { textDecoration: 'underline' },
           },
-          '& code': {
+          '& :not(pre) > code': {
             fontFamily: '"Fira Code", "Source Code Pro", monospace',
             fontSize: '0.875em',
             backgroundColor: theme.palette.mode === 'dark' ? '#2D3038' : '#EEF0F3',
